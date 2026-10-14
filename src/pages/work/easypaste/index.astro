@@ -1,0 +1,35 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="EasyPaste — UX case study draft" description="Alex's end-to-end work on EasyPaste: clearer copy and paste actions, compact controls, previews, and reusable text. Case study draft.">
+  <a href="/work/">← All work</a>
+  <p class="eyebrow case-eyebrow">EasyPaste · Case study draft</p>
+  <h1>Making copied text easier to keep and reuse.</h1>
+  <p class="lead">A compact macOS utility, shaped around the small decisions that happen between copying text and using it again.</p>
+  <div class="case-facts">
+    <div><h2>My role</h2><p>Ideas, research, UX design, AI-assisted development, and testing.</p></div>
+    <div><h2>Product</h2><p>Native macOS app. In final testing; Mac App Store availability is not confirmed.</p></div>
+  </div>
+  <p class="case-review">Narrative draft for local review. Real screenshots and the full research account are still being prepared.</p>
+  <div class="case-body">
+    <section aria-labelledby="problem"><h2 id="problem">The problem: a copy is easy to lose</h2><p>When you copy another piece of text, the earlier copy is no longer ready to paste. Some text is useful for a few minutes; some is a reply, link, or phrase you want to keep using.</p><p>EasyPaste gives these two needs separate places: <strong>History</strong> captures copied text, and <strong>Note</strong> holds text cards you choose to save and edit.</p></section>
+    <section aria-labelledby="constraints"><h2 id="constraints">The design had to fit beside other work</h2><p>The app is a small window used alongside other apps. Limited width, long text, pointer movement, and focus changes all affect the experience. A control can fit visually and still be awkward to reach or unclear to use.</p><p>I worked through these details while building and testing the app, with Codex assisting implementation and technical checks. I owned the product ideas and decisions.</p></section>
+    <section aria-labelledby="copy-decision"><h2 id="copy-decision">Decision 1: make Copy and Paste explicit</h2><p>Copying changes the clipboard. Pasting also changes another app. Treating them as one action can make it unclear what a click will do.</p><p>With <strong>Auto paste</strong> off, clicking an item copies it. With Auto paste on, a single click selects and a double-click copies and pastes. History’s <strong>More → Copy</strong> and <strong>More → Paste</strong> let the user choose a specific action regardless of that setting.</p><p>The feedback reports a clipboard write. It does not claim that the destination app accepted the text.</p><div class="case-media"><strong>Image to add</strong><p>Real screenshots of the More menu and Auto paste setting, using fictional text.</p></div></section>
+    <section aria-labelledby="preview-decision"><h2 id="preview-decision">Decision 2: let the preview support the whole task</h2><p>A truncated row helps scan a compact list, but it cannot show every part of a long item. The preview needs to stay usable while the pointer moves into it, and it should support ordinary scrolling, selection, and copying.</p><p>Project testing exposed previews that dismissed too early or interfered with the next click. The interaction was refined so reading a preview could lead into selecting text or acting on the item.</p><p>Tags stay in the preview’s header while the text scrolls. Editing a Tag changes its label without changing the copied text.</p><div class="case-media"><strong>Demonstration to add</strong><p>A short recording: open a preview, move into it, select one sentence, and copy it.</p></div></section>
+    <section aria-labelledby="grouping-decision"><h2 id="grouping-decision">Decision 3: clarify the two kinds of History</h2><p>Pinned items have a manual order. Regular History follows recent use. These groups need to be distinguishable without making a narrow list feel crowded.</p><p>One iteration used shaded pinned tiles. The expanded list later returned to a neutral background with a small <strong>Pinned</strong> heading and divider. This kept the grouping while reducing the repeated visual treatment.</p><p>Dragging reorders pinned items within their group. Reusing regular text updates its position. The app also works to preserve the visible list position as items move.</p><div class="case-media"><strong>Comparison to add</strong><p>Approved before-and-after images of the expanded Pinned group, with matching fictional content.</p></div></section>
+    <section aria-labelledby="evidence"><h2 id="evidence">What the evidence supports</h2><p>The project records describe my hands-on testing, feedback, revisions, and automated implementation checks. Those checks helped catch interaction and layout regressions.</p><p>This draft does not claim a participant study, measured time savings, improved task-completion rates, or accessibility certification. I’ll add the research methods and material I can share, with clear attribution and limits.</p></section>
+    <section aria-labelledby="current-state"><h2 id="current-state">Where the product stands</h2><p>The current app brings together text History, reusable Note cards, pinning, Tags, Search, full-text previews, and deliberate copy/paste behavior. Final app testing is still in progress.</p><p>The next step for this case study is to connect the narrative to real product images and the original research material. The next step for the product is to confirm release, support, and privacy details.</p><div class="actions"><a class="primary" href="/apps/easypaste/">Explore EasyPaste →</a><a href="/work/">Back to all work</a></div></section>
+  </div>
+</Layout>
+<style>
+  .case-eyebrow { margin-top: 32px; }
+  .case-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding: 24px 0; margin: 28px 0 16px; border-top: 1px solid #d8dcd3; border-bottom: 1px solid #d8dcd3; }
+  .case-facts h2 { font-size: 14px; margin: 0 0 8px; }
+  .case-facts p { font-size: 15px; margin: 0; }
+  .case-review { font-size: 13px; color: #61675c; }
+  .case-body { max-width: 740px; }
+  .case-body section { padding-top: 24px; border-top: 1px solid #d8dcd3; }
+  .case-media { padding: 18px 20px; margin: 24px 0; background: #eeeaf4; border-left: 2px solid #b3a1d0; font-size: 14px; color: #61596e; }
+  .case-media p { margin: 4px 0 0; }
+  @media (max-width: 600px) { .case-facts { grid-template-columns: 1fr; gap: 20px; } }
+</style>

@@ -1,10 +1,15 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import ProjectList from '../../components/ProjectList.astro';
 ---
 <Layout title="Work" description="A place for Alex's UX case studies. Local review draft.">
   <p class="eyebrow">Work</p>
   <h1>Behind the decisions.</h1>
-  <p class="lead">A place for the context, process, and details of my UX work.</p>
-  <div class="notice"><p>Case studies are not published yet. Project selection, my role, source material, and outcomes still need to be confirmed.</p></div>
-  <div class="actions"><a href="/">Back to the portfolio</a></div>
+  <p class="lead">Products I design and build, and the thinking that goes into them.</p>
+  <section aria-labelledby="projects-heading">
+    <h2 id="projects-heading">EasyPaste and Text Select</h2>
+    <p>I own the ideas, research, design, AI-assisted development, and testing for both products. EasyPaste has a first case-study draft; Text Select’s design story is in preparation.</p>
+    <ProjectList />
+  </section>
+  <div class="actions"><a href="/#contact">Contact & résumé</a><a href="/apps/">Browse the apps</a></div>
 </Layout>

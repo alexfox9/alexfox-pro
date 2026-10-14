@@ -1,11 +1,47 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
+import EasyPasteLayout from '../../../layouts/EasyPasteLayout.astro';
+import EasyPasteExample from '../../../components/EasyPasteExample.astro';
 ---
-<Layout title="EasyPaste" description="EasyPaste by Alex. Product page in preparation.">
-  <p class="eyebrow">An app by Alex</p>
-  <h1>EasyPaste</h1>
-  <p class="lead">Product page in preparation.</p>
-  <p>Features, screenshots, and a download link will be added after the content is confirmed.</p>
-  <div class="actions"><a href="/apps/easypaste/support/">Support</a><a href="/apps/easypaste/privacy/">Privacy</a></div>
-  <a href="/apps/">All apps <span aria-hidden="true">→</span></a>
-</Layout>
+<EasyPasteLayout title="EasyPaste for Mac" description="Keep copied text handy. Save text you use often in Note, then find and reuse it with EasyPaste for Mac.">
+  <div class="ep-hero">
+    <div>
+      <p class="eyebrow">Clipboard history and reusable text for Mac</p>
+      <h1>Copied once.<br />Handy when you need it.</h1>
+      <p class="lead">EasyPaste keeps copied text in <strong>History</strong> and lets you save text you use often in <strong>Note</strong>.</p>
+      <p>For the replies, links, and little pieces of text you reach for throughout the day.</p>
+      <div class="actions"><a class="ep-button" href="/apps/easypaste/support/#first-steps">Learn how it works <span aria-hidden="true">&nbsp;→</span></a><a href="#everyday">Explore everyday uses</a></div>
+      <div class="ep-release"><span class="ep-status">In final testing</span><p class="ep-small">Mac App Store submission is planned. Availability is not confirmed.</p><p class="ep-small">Minimum macOS version and pricing: to be confirmed.</p></div>
+    </div>
+    <div><EasyPasteExample /><p class="ep-asset-pending">Real app screenshot pending. This illustration shows the idea, not the exact interface.</p></div>
+  </div>
+  <section class="ep-section" id="everyday" aria-labelledby="everyday-title">
+    <p class="eyebrow">Small, everyday tasks</p><h2 id="everyday-title">Keep the useful bits close.</h2>
+    <div class="ep-usecases">
+      <div><h3>Use an earlier copy</h3><p>Copied another link before pasting the first one? Find the earlier text in History and copy it again.</p></div>
+      <div><h3>Keep a reply ready</h3><p>Save a greeting or a message you write often in Note. Edit the card when your wording changes.</p></div>
+      <div><h3>Gather text for a task</h3><p>Keep useful snippets in History. Add Tags such as “Project” or “Reply” so Search can find them.</p></div>
+    </div>
+  </section>
+  <section class="ep-section ep-split" aria-labelledby="reuse-title">
+    <div><p class="eyebrow">Text, ready to reuse</p><h2 id="reuse-title">Keep it. Find it.<br />Use it again.</h2><p>Two lists for two kinds of text. A compact window beside your other apps.</p></div>
+    <div>
+      <div class="ep-feature"><h3>History for what you copy</h3><p>Copied text appears in History. Pin important items to keep them when the list fills up.</p></div>
+      <div class="ep-feature"><h3>Note for what you choose to save</h3><p>Create and edit text cards. Drag them into the order that makes sense to you.</p></div>
+      <div class="ep-feature"><h3>Find a phrase, or just part of it</h3><p>Search text and Tags in the list you are viewing. Open a preview to read the full text, then select and copy the part you need.</p></div>
+      <div class="ep-feature"><h3>Choose when to paste</h3><p>Copy an item and paste with <kbd>⌘V</kbd>. Or turn on Auto paste and double-click to copy and paste into the app you were using.</p></div>
+    </div>
+  </section>
+  <section class="ep-section ep-split" aria-labelledby="start-title">
+    <div><p class="eyebrow">Getting started</p><h2 id="start-title">A familiar first step.</h2><p>Start with Auto paste off. You choose where the text goes.</p></div>
+    <div><ol><li>Copy text in another app.</li><li>Open EasyPaste and find it in <strong>History</strong>.</li><li>Click the item to copy it again. Return to your app and press <kbd>⌘V</kbd>.</li></ol><a href="/apps/easypaste/support/">Read the full Help guide <span aria-hidden="true">→</span></a></div>
+  </section>
+  <section class="ep-section ep-split" aria-labelledby="compact-title">
+    <div><p class="eyebrow">Fits beside your work</p><h2 id="compact-title">A little window.<br />Your own setup.</h2></div>
+    <div><p>Use <strong>Collapse View</strong> to shrink the window when you leave it. The <strong>toolbar pin</strong> keeps the window above other windows. It is separate from pinning a History item.</p><p>Choose Theme, Transparency, Show numbering, Show pin buttons, and other preferences in Settings.</p></div>
+  </section>
+  <section class="ep-section" aria-labelledby="privacy-title">
+    <p class="eyebrow">Saved on your computer</p><h2 id="privacy-title">“Everything you save in EasyPaste stays only on your computer.”</h2>
+    <p>Read how EasyPaste saves your text, and how website visits and support messages are handled separately.</p>
+    <div class="actions"><a href="/apps/easypaste/privacy/">Read the privacy draft</a><a href="/apps/easypaste/support/#support">Help &amp; Support</a></div>
+  </section>
+</EasyPasteLayout>

@@ -1,0 +1,23 @@
+---
+import Layout from './Layout.astro';
+import '../styles/easypaste.css';
+interface Props { title: string; description: string; }
+const { title, description } = Astro.props;
+const links = [
+  { href: '/apps/easypaste/', label: 'Overview' },
+  { href: '/apps/easypaste/support/', label: 'Help & Support' },
+  { href: '/apps/easypaste/privacy/', label: 'Privacy' },
+];
+---
+<Layout title={title} description={description}>
+  <div class="ep">
+    <div class="ep-navigation">
+      <a class="ep-brand" href="/apps/easypaste/"><img src="/images/easypaste/icon.png" alt="" width="36" height="36" />EasyPaste</a>
+      <nav aria-label="EasyPaste navigation">
+        {links.map(({ href, label }) => <a href={href} aria-current={Astro.url.pathname === href ? 'page' : undefined}>{label}</a>)}
+      </nav>
+    </div>
+    <slot />
+    <div class="ep-end"><span>EasyPaste · Designed and built by Alex</span><a href="/work/">Alex’s UX portfolio <span aria-hidden="true">→</span></a></div>
+  </div>
+</Layout>

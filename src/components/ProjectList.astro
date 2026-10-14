@@ -1,0 +1,21 @@
+---
+import { projects } from '../data/projects';
+interface Props { purpose?: 'portfolio' | 'apps'; }
+const { purpose = 'portfolio' } = Astro.props;
+const Heading = purpose === 'apps' ? 'h2' : 'h3';
+---
+<div class="project-list">
+  {projects.map(project => <article class={`project-entry project-${project.id}`}>
+    <img class="project-icon" src={project.icon} alt="" width="64" height="64" loading="lazy" />
+    <div class="project-copy">
+      <p class="project-category">{project.category}</p>
+      <Heading>{project.title}</Heading>
+      <p>{purpose === 'portfolio' ? project.focus : project.description}</p>
+      <p class="project-state">{purpose === 'portfolio' ? `${project.caseStudyStatus} · ${project.productStatus}` : project.productStatus}</p>
+    </div>
+    <a class="project-link" href={purpose === 'portfolio' && project.caseStudyHref ? project.caseStudyHref : project.productHref}>
+      {purpose === 'portfolio' ? project.caseStudyHref ? 'Read the case study draft' : `Explore ${project.title}` : project.id === 'easypaste' ? 'Product page' : 'Visit product site'}
+      <span aria-hidden="true">{purpose === 'portfolio' && project.caseStudyHref ? ' →' : project.productHref.startsWith('http') ? ' ↗' : ' →'}</span>
+    </a>
+  </article>)}
+</div>

@@ -1,9 +1,15 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
+import EasyPasteLayout from '../../../layouts/EasyPasteLayout.astro';
 ---
-<Layout title="EasyPaste privacy" description="EasyPaste privacy page. Local review draft, not a published policy.">
-  <p class="eyebrow">EasyPaste · Privacy</p>
-  <h1>Privacy</h1>
-  <div class="notice"><p>Privacy page draft. The app’s data handling and this website’s privacy details must be verified before a policy is published. This is not a final privacy policy.</p></div>
-  <div class="actions"><a href="/apps/easypaste/">Back to EasyPaste</a></div>
-</Layout>
+<EasyPasteLayout title="EasyPaste privacy — review draft" description="A review draft explaining EasyPaste's local text storage, permissions, website privacy, and the facts still needed before publication.">
+  <div class="ep-policy">
+    <p class="eyebrow">Privacy · Review draft</p><h1>Your text. Your computer.</h1><p class="lead">“Everything you save in EasyPaste stays only on your computer.”</p>
+    <div class="ep-callout"><p><strong>This is a draft, not a final privacy policy.</strong> The app behavior below was checked against the current source. The release build, website hosting details, and support process still need a final review.</p></div>
+    <section aria-labelledby="app-data"><h2 id="app-data">What EasyPaste saves</h2><p>While EasyPaste is running, it watches for copied text and adds it to <strong>History</strong>. It also saves the text cards you create or add to <strong>Note</strong>.</p><p>The current app saves these lists in files on your Mac. The saved information includes text, Tags, pinned status in History, and dates used to order or manage items. App preferences are also saved on your Mac.</p><p>The reviewed app source uses local storage. No cloud sync or app analytics service was found in that review. This does not describe data handled by macOS, the Mac App Store, this website, or a future support service.</p></section>
+    <section aria-labelledby="using-text"><h2 id="using-text">What happens when you copy or paste</h2><p>When you reuse text, EasyPaste writes it to the macOS clipboard. Other apps can use text on the clipboard. Direct Paste sends the normal paste command to the app you were using.</p><p>Direct paste may require permission in <strong>System Settings → Privacy &amp; Security → Accessibility</strong>. The app also contains Accessibility-based text-context features. Permission lets the app interact with other apps; it is separate from saving your lists locally.</p><p><a href="/apps/easypaste/support/#troubleshooting">Read the direct-paste help</a> or <a href="https://support.apple.com/guide/mac-help/mh43185/mac">Apple’s permission guide</a>.</p></section>
+    <section aria-labelledby="retention"><h2 id="retention">Keeping and deleting saved text</h2><p>History and Note each hold up to 100 items. At capacity, History removes the least recently used unpinned item. If all items are pinned, new text is not added. Note removes the earliest-created card when a new card is added to a full list.</p><p>You can delete individual items or clear a list in Settings. <strong>EasyPaste has no restore feature for deleted items.</strong> Deleting saved text from EasyPaste does not remove copies you pasted into other apps, or copies in a backup of your Mac.</p><p><a href="/apps/easypaste/support/#storage">Read the storage and deletion guide</a>.</p></section>
+    <section aria-labelledby="website-data"><h2 id="website-data">Visiting this website</h2><p>The website and the app are separate. This local website version has no analytics script, contact form, or embedded third-party media. Fonts and the app icon are served with the site.</p><p>The published site is hosted by Hostinger. Hosting and CDN services may process information about visits. The live hosting logs, retention periods, cookies, and any future analytics must be checked before this section is final. The app’s local-storage statement is not a promise about website visits.</p></section>
+    <section id="support-messages"><h2>Contacting support</h2><p>A support address has not been set for this draft. If you later email support, your message and attachments will leave your computer and be handled by the email service and the person answering.</p><p>Use fictional text to explain a problem. Avoid sending your clipboard history or personal text. The support provider, who can access messages, and how long they are kept still need to be confirmed.</p></section>
+
+  </div>
+</EasyPasteLayout>

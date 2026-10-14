@@ -1,0 +1,23 @@
+---
+interface Props { mode?: 'history' | 'note'; }
+const { mode = 'history' } = Astro.props;
+const history = mode === 'history';
+---
+<figure class="ep-example">
+  <div class="ep-example-surface" aria-label={`${history ? 'History' : 'Note'} illustration with fictional text`}>
+    <div class="ep-example-heading"><span class="ep-example-dots" aria-hidden="true">● ● ●</span><span>EasyPaste</span><span aria-hidden="true">⌘</span></div>
+    <div class="ep-example-tabs"><span class:list={{ 'is-active': history }}>History</span><span class:list={{ 'is-active': !history }}>Note</span></div>
+    <div class="ep-example-search">Search <span aria-hidden="true">⌕</span></div>
+    {history ? <>
+      <p class="ep-example-group">Pinned</p>
+      <div class="ep-example-item"><span class="ep-example-tag">Reply</span><p>Thanks for your message.<br />I’ll get back to you tomorrow.</p></div>
+      <p class="ep-example-group">History</p>
+      <div class="ep-example-item is-highlighted"><p>Meeting notes: review the draft on Friday.</p></div>
+      <div class="ep-example-item"><p>https://example.com/project</p></div>
+    </> : <>
+      <div class="ep-example-item"><span class="ep-example-tag">Reply</span><p>Thanks for your message.<br />I’ll get back to you tomorrow.</p></div>
+      <div class="ep-example-item"><span class="ep-example-tag">Checklist</span><p>Review the draft<br />Check the links<br />Send for approval</p></div>
+    </>}
+  </div>
+  <figcaption>Illustrated example · Fictional text, not an app screenshot.</figcaption>
+</figure>

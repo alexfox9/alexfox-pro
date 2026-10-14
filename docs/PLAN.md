@@ -1,5 +1,7 @@
 # Build plan
 
+The current website-wide plan is [WEBSITE-DEVELOPMENT-PLAN.md](WEBSITE-DEVELOPMENT-PLAN.md), with the asset checklist in [MEDIA-BRIEF.md](MEDIA-BRIEF.md). The earlier foundation plan below is retained as context; hosting was subsequently verified in DEPLOYMENT.md.
+
 ## 1. Local foundation
 
 Create a minimal static Astro project in the existing checkout. Add a shared responsive layout, basic navigation, agreed routes, a 404 page, and an external textselect.click link. Use system fonts and restrained styling as a provisional baseline. Keep draft pages out of search indexing. No analytics, forms, CMS, backend, or publishing workflow in this phase.

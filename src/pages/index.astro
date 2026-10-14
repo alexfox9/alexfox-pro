@@ -1,17 +1,42 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ProjectList from '../components/ProjectList.astro';
 ---
 <Layout title="UX portfolio" description="Alex's UX portfolio and independent apps. Local review draft.">
+  <aside class="development-notice" aria-label="Website status">
+    <strong>Website in development</strong>
+    <span>Content and design are in progress. This is not the final version.</span>
+  </aside>
   <p class="eyebrow">UX portfolio</p>
-  <h1>Hi, I’m Alex.</h1>
-  <p class="lead">This is the new home for my UX work and the apps I build.</p>
+  <h1>I’m Alex.<br />I design and build software.</h1>
+  <p class="lead">I take products from idea and research through design, AI-assisted development, and testing.</p>
   <div class="actions">
     <a class="primary" href="/work/">Explore my work <span aria-hidden="true">→</span></a>
-    <a href="/apps/">See my apps</a>
+    <a href="#contact">Contact & résumé</a>
   </div>
   <section aria-labelledby="work-heading">
-    <h2 id="work-heading">Work, with the thinking behind it.</h2>
-    <p>Case studies are being prepared. This space will show the problems, decisions, and evidence behind each project.</p>
-    <a href="/work/">View the work section</a>
+    <h2 id="work-heading">Selected product work</h2>
+    <p>Two products I’ve taken from my own ideas into working software. Explore the products and the decisions behind their design.</p>
+    <ProjectList />
+    <p><a href="/work/">More about the work <span aria-hidden="true">→</span></a></p>
+  </section>
+  <section class="portfolio-contact" id="contact" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Let’s talk about UX work.</h2>
+    <p class="pending-contact">Public contact details and a résumé will be added before the portfolio launches.</p>
   </section>
 </Layout>
+
+<style>
+  .development-notice {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    padding: 10px 14px;
+    margin: 0 0 28px;
+    border-left: 2px solid #6b8060;
+    background: #edf0e8;
+    color: #394334;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+</style>

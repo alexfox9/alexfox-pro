@@ -30,6 +30,17 @@ section { margin-top: 48px; }
 footer { border-top: 1px solid #d8dcd3; padding: 24px 0 32px; color: #61675c; font-size: 14px; display: flex; justify-content: space-between; gap: 20px; }
 .skip-link { position: absolute; top: -100px; left: 16px; padding: 12px; background: white; z-index: 1; }
 .skip-link:focus { top: 12px; }
+.project-list { margin-top: 28px; border-top: 1px solid #d8dcd3; }
+.project-entry { display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; gap: 24px; align-items: start; padding: 28px 0; border-bottom: 1px solid #d8dcd3; }
+.project-icon { width: 64px; height: 64px; object-fit: contain; border-radius: 12px; }
+.project-copy :is(h2, h3) { margin: 3px 0 10px; font-size: 25px; font-weight: 550; letter-spacing: -.02em; }
+.project-copy p { margin: 0; }
+.project-copy .project-category { font-size: 12px; color: #61675c; }
+.project-copy .project-state { margin-top: 12px; font-size: 12px; color: #61675c; }
+.project-link { font-size: 14px; margin-top: 28px; }
+.portfolio-contact { margin-top: 48px; padding: 28px 0 0; }
+.portfolio-contact h2 { margin-top: 0; }
+.pending-contact { font-size: 14px; color: #61675c; }
 @media (max-width: 600px) {
   .shell { padding: 0 20px; }
   header { align-items: flex-start; flex-direction: column; gap: 12px; padding: 20px 0; }
@@ -37,4 +48,7 @@ footer { border-top: 1px solid #d8dcd3; padding: 24px 0 32px; color: #61675c; fo
   .lead { font-size: 18px; }
   .row { grid-template-columns: 1fr; gap: 12px; }
   footer { flex-direction: column; gap: 8px; }
+  .project-entry { grid-template-columns: 48px minmax(0, 1fr); gap: 16px; }
+  .project-icon { width: 48px; height: 48px; border-radius: 9px; }
+  .project-link { grid-column: 2; margin-top: 0; }
 }
