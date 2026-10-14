@@ -21,3 +21,5 @@ Astro static output is compatible with Hostinger's documented static upload path
 The specific Hostinger account, domain mapping, HTTPS, existing files, and GitHub connection have not been inspected. Before delivery, verify whether the selected “Deploy as static” flow actually builds Astro from GitHub, supports the required Node version, and serves `dist/`. Do not assume connecting a repository deploys built assets. If unavailable, agree on the documented static upload method. Do not add automatic deployment or replace hosting files without approval.
 
 After approval, complete content and visual QA, remove draft noindex only when ready, then use the approved push/publishing method. Verify root and nested URLs, CSS/assets, 404 behavior, HTTPS, and textselect.click link on the real host.
+
+Deployment follow-up: Alex authorized making the connected Hostinger website work on October 13, 2026. The Git flow was confirmed to publish source without building Astro. A local static build was uploaded successfully; see [DEPLOYMENT.md](DEPLOYMENT.md) for the verified procedure. Content remains draft and noindex remains in place.
