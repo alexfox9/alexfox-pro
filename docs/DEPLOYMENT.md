@@ -1,5 +1,22 @@
 # Hostinger deployment
 
+## Current delivery — October 21, 2026
+
+`main` contains Astro source. Hostinger must deploy the **`deploy` branch**, which contains only generated static files, with `index.html` at the root. Do not connect Hostinger directly to `main`: Advanced Git pulls files without building Astro, causing HTTP 403.
+
+`.github/workflows/publish-static.yml` runs on pushes to main (or a manual run on main), installs the locked dependencies on Node 22, checks and builds the website, then commits the generated output to `deploy`. A failed check/build leaves the last published build intact. The workflow uses the existing repository GITHUB_TOKEN; no Hostinger secret is required. Hostinger's Git integration watches `deploy`.
+
+After a main push, wait for the GitHub Actions run to finish before using Hostinger Redeploy. Redeploy must show branch `deploy`, not `main`. Verify the homepage, nested routes, styles, support email, and custom 404. `/source-revision.txt` identifies the source commit used for the live build.
+
+For a source rollback, revert the unwanted source commit on main and push; the same workflow builds and publishes that revision. Generated deploy commits also retain build history. Do not force-push or edit generated files by hand.
+
+### Emergency restoration
+
+Run `ASTRO_TELEMETRY_DISABLED=1 npm ci`, `npm run check`, and `npm run build`. Deploy the **contents of dist/** to alexfox.pro using Hostinger's static deployment tool. Keep the Git connection on deploy afterward. No per-change hosting backup is required for this Git-tracked static site unless Alex requests one.
+
+## Historical setup and failure evidence
+
+
 ## Confirmed configuration — October 13, 2026
 
 Alex authorized making the connected Hostinger website work using the opened tabs.
