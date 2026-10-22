@@ -39,7 +39,7 @@ jobs:
           path: .publish
       - name: Publish built files
         run: |
-          rsync -a --delete --exclude='.git' dist/ .publish/
+          rsync -a --checksum --delete --exclude='.git' dist/ .publish/
           cd .publish
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
