@@ -52,3 +52,13 @@ Alex confirmed two current projects and ownership of ideas, research, design, AI
 ## Publication approval — October 14, 2026
 
 Alex approved the local result and requested publication and a Git commit/push. Earlier local-only restrictions above describe the review stage. The approved static build was sent to Hostinger; source-only Git auto-deployment remains off because it does not build Astro.
+
+## Support contact update — October 21, 2026
+
+Alex created and tested easypaste@alexfox.pro, including receiving and replying. Added the address as a visible mailto link for questions, bug reports, and suggestions. Removed the support-not-open wording and clarified the requested bug-report details. Earlier pending-contact notes describe the previous review stage; privacy-provider/access/retention questions remain unresolved.
+
+Rechecked the website guide against the clean local EasyPaste checkout at 1d08bcb: EasyPasteHelpView.swift, HistoryMoreSession.swift, ListItemInteraction.swift, ClipboardHistoryStore.swift, NotebookStore.swift, and PaletteSettingsContent.swift. Copy/direct Paste, pinning/reordering, Note Save, Tags/Search, window settings, shortcuts, and capacity/deletion instructions agree with the current source. No instruction correction was needed. This was source verification, not a new physical app test or App Store readiness audit. No app files were changed.
+
+Alex authorized a focused branch, merge into main, and push to origin, without a hosting backup. This update delivers website source to GitHub; it does not change Hostinger deployment configuration.
+
+Validation: Astro check passed for 15 files with zero errors, warnings, or hints; the static build emitted eight pages. Verified the generated support page contains the visible mailto link and no longer contains the pending-contact wording. git diff --check passed.
